@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabric Factory — Profile</title>
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header class="profile-header">
+    <div class="header-inner">
+      <div class="logo-slot">
+        <img src="CRESTLOGO.png" alt="Logo" class="logo-img">
+      </div>
+      <h1>FABRIC FACTORY</h1>
+      <nav class="profile-nav">
+        <button class="nav-btn" onclick="location.href='product.html'">
+          <img src="HOME_ICON.png" alt="Home">
+          <span class="tooltip">Home</span>
+        </button>
+        <button class="nav-btn" onclick="location.href='about.html'">
+          <img src="CRESTLOGO.png" alt="About">
+          <span class="tooltip">About</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h2 id="welcomeTitle">Welcome to Your Creative Space</h2>
+        <p id="welcomeText">Join our community of fabric enthusiasts and unlock exclusive benefits</p>
+        <div class="auth-buttons" id="authButtons">
+          <button class="main-btn" onclick="showLogin()">Login</button>
+          <button class="main-btn" onclick="showSignup()">Sign Up</button>
+        </div>
+        <div class="user-welcome" id="userWelcome" style="display: none;">
+          <span>Welcome back, <span id="userName">User</span>!</span>
+          <div class="user-buttons">
+            <button class="main-btn" onclick="goToProducts()">View Products</button>
+            <button class="main-btn logout-btn" onclick="logout()">Log Out</button>
+          </div>
+        </div>
+      </div>
+      <div class="welcome-image">
+        <img src="fabricroom.png" alt="Beautiful Fabrics">
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <h2>Member Benefits</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎁</div>
+          <h3>Exclusive Discounts</h3>
+          <p>Get members-only pricing and early access to new collections</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📦</div>
+          <h3>Free Shipping</h3>
+          <p>Enjoy free shipping on orders over $50 for all members</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💫</div>
+          <h3>Project Gallery</h3>
+          <p>Share your creations and get inspired by our community</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">👑</div>
+          <h3>VIP Events</h3>
+          <p>Access to workshops, fabric launches, and special events</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-card">
+      <span class="close" onclick="closeModals()">&times;</span>
+      <h2>Welcome Back</h2>
+      <p class="modal-subtitle">Sign in to your Fabric Factory account</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        <button type="submit" class="main-btn">Sign In</button>
+      </form>
+      
+      <div class="modal-footer">
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-card">
+      <span class="close" onclick="closeModals()">&times;</span>
+      <h2>Join Our Community</h2>
+      <p class="modal-subtitle">Create your Fabric Factory account</p>
+      
+      <form id="signupForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="signupFullName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="signupDob" required>
+        </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="signupUsername" placeholder="Choose a username" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="signupPassword" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <div class="form-options">
+          <label class="terms-agree">
+            <input type="checkbox" id="agreeTerms" required>
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+        <button type="submit" class="main-btn">Create Account</button>
+      </form>
+      
+      <div class="modal-footer">
+        <p>Already have an account? <a href="#" onclick="showLogin()">Sign in here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <img src="Sheep.gif" alt="Loading...">
+      <h3>Welcome to Fabric Factory</h3>
+      <p>Preparing your creative journey...</p>
+    </div>
+  </div>
+
+  <footer class="profile-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Fabric Factory Where Tradition Meets Creativity</p>
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>

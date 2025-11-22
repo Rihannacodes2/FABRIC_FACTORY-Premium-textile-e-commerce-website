@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fabric Factory — Checkout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left"></div>
+      <div class="header-center">
+        <div class="logo-slot">
+          <img src="CRESTLOGO.png" alt="Logo" class="logo-img">
+        </div>
+        <h2 class="header-title">Fabric Factory</h2>
+        <nav class="elevated-nav">
+          <button class="nav-btn" onclick="location.href='product.html'">
+            <img src="HOME_ICON.png" alt="">
+            <span class="tooltip">Home</span>
+          </button>
+          <button class="nav-btn" onclick="location.href='about.html'">
+            <img src="CRESTLOGO.png" alt="">
+            <span class="tooltip">About</span>
+          </button>
+          <button class="nav-btn" onclick="location.href='profile.html'">
+            <img src="PROFILE.png" alt="">
+            <span class="tooltip">Profile</span>
+          </button>
+        </nav>
+      </div>
+      <div class="header-right"></div>
+    </div>
+  </header>
+
+  <main class="checkout-main">
+    <div class="checkout-container">
+      <section class="order-summary">
+        <h2>Order Summary</h2>
+        <div id="checkoutItems" class="checkout-items">
+
+        </div>
+        <div class="summary-totals">
+          <div class="total-line">
+            <span>Subtotal:</span>
+            <span id="subtotalAmount">$0.00</span>
+          </div>
+          <div class="total-line">
+            <span>Shipping:</span>
+            <span id="shippingAmount">$8.99</span>
+          </div>
+          <div class="total-line">
+            <span>Tax:</span>
+            <span id="taxAmount">$0.00</span>
+          </div>
+          <div class="total-line grand-total">
+            <span>Total:</span>
+            <span id="grandTotal">$0.00</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-form">
+        <h2>Shipping Information</h2>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="address">Street Address *</label>
+            <input type="text" id="address" name="address" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="state">State *</label>
+              <input type="text" id="state" name="state" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="zipCode">ZIP Code *</label>
+              <input type="text" id="zipCode" name="zipCode" required>
+            </div>
+          </div>
+
+          <h2>Payment Method</h2>
+          
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input type="radio" id="creditCard" name="paymentMethod" value="credit" checked>
+              <label for="creditCard">Credit Card</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+              <label for="paypal">PayPal</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" id="applePay" name="paymentMethod" value="applepay">
+              <label for="applePay">Apple Pay</label>
+            </div>
+          </div>
+
+          <div id="creditCardForm" class="payment-form">
+            <div class="form-group">
+              <label for="cardNumber">Card Number *</label>
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiryDate">Expiry Date *</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+              </div>
+              
+              <div class="form-group">
+                <label for="cvv">CVV *</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="cardName">Name on Card *</label>
+              <input type="text" id="cardName" name="cardName">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="ghost-btn" onclick="location.href='product.html'">Continue Shopping</button>
+            <button type="submit" class="main-btn" id="placeOrderBtn">Place Order</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div id="confirmationModal" class="confirmation-modal">
+    <div class="confirmation-content">
+      <div class="confirmation-header">
+        <div class="success-icon">✓</div>
+        <h2>Order Confirmed!</h2>
+      </div>
+      
+      <div class="confirmation-body">
+        <p>Thank you for your purchase! Your order has been received.</p>
+        
+        <div class="order-details">
+          <h3>Order Details</h3>
+          <div id="invoiceDetails">
+
+          </div>
+        </div>
+        
+        <div class="confirmation-actions">
+          <button class="main-btn" onclick="printInvoice()">Print Invoice</button>
+          <button class="ghost-btn" onclick="location.href='product.html'">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
