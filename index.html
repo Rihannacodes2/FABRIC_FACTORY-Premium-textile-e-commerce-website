@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fabric Factory — Collection</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+
+  <link rel="stylesheet" href="product.css">
+</head>
+<body data-page="index"> 
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left"></div>
+      <div class="header-center">
+        <div class="banner-wrap">
+          <div class="logo-slot">
+            <img src="CRESTLOGO.png" alt="Logo" class="logo-img">
+          </div>
+          <img src="sitting room.jpg" alt="Fabric Banner 1" class="banner-img">
+          <img src="entryway.jpg" alt="Fabric Banner 2" class="banner-img">
+          <img src="fabricroom.png" alt="Fabric Banner 3" class="banner-img">
+        </div>
+        <h2 class="header-title">Fabric Factory</h2>
+
+        <nav class="elevated-nav">
+          <button class="nav-btn" onclick="location.href='index.html'">
+            <img src="HOME_ICON.png" alt="">
+            <span class="tooltip">Home</span>
+          </button>
+          <button class="nav-btn" id="openCartBtn">
+            <img src="CART.png" alt="">
+            <span class="tooltip">Cart</span>
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+          <button class="nav-btn" onclick="location.href='about.html'">
+            <img src="CRESTLOGO.png" alt="">
+            <span class="tooltip">About</span>
+          </button>
+          <button class="nav-btn" onclick="location.href='profile.html'">
+            <img src="PROFILE.png" alt="">
+            <span class="tooltip">Profile</span>
+          </button>
+        </nav>
+      </div>
+      <div class="header-right"></div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="intro">
+      <h2 class="section-title">Customer Favourites</h2>
+      <p class="section-sub">Handpicked textiles that unroll like a story antique soul, modern cut. Each fabric tells a tale of craftsmanship and timeless elegance.</p>
+    </section>
+
+    <section class="hero-slider">
+      <button id="heroPrev" class="hero-arrow">&#10094;</button>
+      <div class="hero-track" id="heroTrack">
+        <img src="silk-navy.jpg" class="hero-slide" alt="Luxurious Silk">
+        <img src="velvet-brown.jpg" class="hero-slide" alt="Rich Velvet">
+        <img src="Polyester-ivory.jpg" class="hero-slide" alt="Elegant Polyester">
+        <img src="velvet-fabric.jpg" class="hero-slide" alt="Premium Velvet">
+        <img src="Polyester-navy.jpg" class="hero-slide" alt="Navy Polyester">
+      </div>
+      <button id="heroNext" class="hero-arrow">&#10095;</button>
+    </section>
+
+    <section id="productGrid" class="product-grid">
+
+      <article class="product-card" data-id="p1" data-name="Cotton Weave" data-price="15.00" data-images='["Cotten-white.jpg","cotton-ivory.jpg","Cotton-bronze.jpg","cotton-navy.jpg"]' data-description="Soft breathable cotton, ideal for dresses and shirts. Perfect for everyday comfort and style.">
+        <div class="card-top">
+          <img src="Cotten-white.jpg" class="card-thumb" alt="Cotton Weave">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cotton Weave</h3>
+          <p class="card-price">$15 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p2" data-name="Silk Roll" data-price="28.00" data-images='["silk-white.jpg","silk-ivory.jpg","silk-bronze.jpg","silk-navy.jpg"]' data-description="Luxurious silk with natural sheen evening wear favourite. Perfect for special occasions and elegant garments.">
+        <div class="card-top">
+          <img src="silk-navy.jpg" class="card-thumb" alt="Silk Roll">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Silk Roll</h3>
+          <p class="card-price">$28 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p3" data-name="Linen Fabric" data-price="18.50" data-images='["linen-white.jpg","linen-ivory.jpg","linen-bronze.jpg","linen-navy.jpg"]' data-description="Breathable, textured linen with character and weight. Ideal for summer clothing and home decor.">
+        <div class="card-top">
+          <img src="linen.jpg" class="card-thumb" alt="Linen Fabric">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Linen Fabric</h3>
+          <p class="card-price">$18.50 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p4" data-name="Polyester Fabric" data-price="20.50" data-images='["Polyester-white.jpg","Polyester-ivory.jpg","Polyester-bronze.jpg","Polyester-navy.jpg"]' data-description="Durable and versatile polyester with excellent drape. Perfect for various projects and long lasting wear.">
+        <div class="card-top">
+          <img src="Polyester-fabric.jpg" class="card-thumb" alt="Polyester Fabric">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Polyester Fabric</h3>
+          <p class="card-price">$20.50 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p5" data-name="Velvet Fabric" data-price="35.50" data-images='["velvet-white.jpg","velvet-ivory.jpg","velvet-brown.jpg","velvet-navy.jpg"]' data-description="Luxurious velvet with rich texture and deep colors. Perfect for elegant upholstery and formal wear.">
+        <div class="card-top">
+          <img src="velvet-fabric.jpg" class="card-thumb" alt="Velvet Fabric">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Velvet Fabric</h3>
+          <p class="card-price">$35.50 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p6" data-name="Cotton Thread" data-price="10.50" data-images='["cottonthread-black.jpg","cottonthread-white.jpg"]' data-description="High quality cotton thread for all your sewing needs. Strong and reliable for various fabrics.">
+        <div class="card-top">
+          <img src="cottonthread.jpg" class="card-thumb" alt="Cotton Thread">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cotton Thread</h3>
+          <p class="card-price">$10.50 / spool</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p7" data-name="Polyester Thread" data-price="10.50" data-images='["PolyesterThread-ivory.jpg","Polyester-Threadwhite.jpg"]' data-description="Strong polyester thread with excellent stretch and durability. Ideal for stretch fabrics and heavy duty projects.">
+        <div class="card-top">
+          <img src="PolyesterThread.jpg" class="card-thumb" alt="Polyester Thread">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Polyester Thread</h3>
+          <p class="card-price">$10.50 / spool</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p8" data-name="Silk Thread" data-price="10.50" data-images='["silkthread-white.jpg","silkthread-navy.jpg","silkthread-ivory.jpg"]' data-description="Fine silk thread for delicate work and luxury projects. Perfect for embroidery and fine fabrics.">
+        <div class="card-top">
+          <img src="silkthread.jpg" class="card-thumb" alt="Silk Thread">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Silk Thread</h3>
+          <p class="card-price">$10.50 / spool</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p9" data-name="Nylon Thread" data-price="10.50" data-images='["NylonThread-white.jpg","NylonThread-ivory.jpg","NylonThread-bronze.jpg","NylonThread-navy.jpg"]' data-description="Strong nylon thread with excellent durability and resistance. Ideal for outdoor gear and heavy duty applications.">
+        <div class="card-top">
+          <img src="Nylon-Thread.jpg" class="card-thumb" alt="Nylon Thread">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Nylon Thread</h3>
+          <p class="card-price">$10.50 / spool</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="p10" data-name="Lace Fabric" data-price="10.00" data-images='["lace-white.jpg","lace-ivory.jpg","lace-navy.jpg","lace-bronze.jpg"]' data-description="Delicate lace fabric for elegant projects and special occasions. Adds sophistication to any design.">
+        <div class="card-top">
+          <img src="lace-fabric.jpg" class="card-thumb" alt="Lace Fabric">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Lace Fabric</h3>
+          <p class="card-price">$10.00 / yd</p>
+          <button class="card-action">View / Customize</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  
+  <div id="detailModal" class="detail-modal" aria-hidden="true">
+    <div class="detail-panel">
+      <button class="close detail-close" id="closeDetail">&times;</button>
+      <div class="detail-left">
+        <img id="detailImage" src="" alt="Product Image">
+        <div class="thumb-row" id="thumbRow"></div>
+      </div>
+      <div class="detail-right">
+        <h2 id="detailName">Product Name</h2>
+        <p id="detailDesc" class="detail-desc">Product Description</p>
+        <label>Color 
+          <select id="optColor">
+            <option>Natural</option>
+            <option>Ivory</option>
+            <option>Bronze</option>
+            <option>Navy</option>
+            <option>Custom</option>
+          </select>
+        </label>
+        <label>Fabric Finish 
+          <select id="optFinish">
+            <option value="0">Plain</option>
+            <option value="2">Brushed (+$2/yd)</option>
+            <option value="3">Printed (+$3/yd)</option>
+            <option value="5">Embroidered (+$5/yd)</option>
+          </select>
+        </label>
+        <label>Sheen 
+          <select id="optSheen">
+            <option value="0">Matte</option>
+            <option value="1">Satin (+$1/yd)</option>
+            <option value="2">Gloss (+$2/yd)</option>
+          </select>
+        </label>
+        <label>Yards 
+          <input id="optYards" type="number" min="1" value="1">
+        </label>
+        <p class="subtotal">Subtotal: $<span id="detailSubtotal">0.00</span></p>
+        <button id="addToCart" class="main-btn">Add to Cart</button>
+        <button id="cancelDetail" class="ghost-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="cartSidebar" class="cart-sidebar" aria-hidden="true">
+    <div class="cart-inner">
+      <button class="close cart-close" id="closeCart">&times;</button>
+      <h3>Your Cart</h3>
+      <ul id="cartItems" class="cart-items"></ul>
+      <div class="cart-footer">
+        <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+        <div class="cart-actions">
+          <button id="checkoutBtn" class="main-btn">Checkout</button>
+          <button id="clearCart" class="ghost-btn">Clear</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="product.js"></script>
+</body>
+</html>
